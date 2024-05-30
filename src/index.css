@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+
+}
+
+body {
+  background: #141E30;
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);
+  background: linear-gradient(to right, #243B55, #141E30);
+
+}
+
+:root {
+  --text-white: #FCEDED;
+}
+
+
+main {
+
+  height: 100vh;
+  width: 100%;
+
+}
+
+.container {
+  margin: 0 300px;
+}
+
+header {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 500px;
+
+
+}
+
+.overlay-image {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(45deg, rgba(25, 87, 17, 0.4) 0%, rgba(22, 130, 231, 0.4) 100%);
+  top: 0;
+  left: 0;
+
+}
+
+.navbar {
+  position: absolute;
+  top: 5%;
+  right: 200px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.6;
+  font-weight: 500;
+
+}
+
+.navbar a:hover{
+  opacity: 1;
+}
+
+footer{
+  width: 100%;
+  height: 60px;
+  background-color: #0d172a;
+  color: #FCEDED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myself {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 200;
+  color: var(--text-white);
+  text-align: center;
+}
+.myself div a{
+  transition: transform 0.3s ease;
+}
+.myself div a:hover{
+  transform: scale(1.2);
+}
+.myself h4 {
+  font-size: 40px;
+  font-weight: 400;
+
+}
+
+.myself p {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.acerca-de {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -50px;
+
+}
+.acerca-de img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--text-white);
+  border-radius: 50%;
+  z-index: 100;
+
+}
+.acerca-de p {
+  color: #9d9d9d;
+  line-height: 25px;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.proyectos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+
+}
+.title-section {
+  color: #DD8200;
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.btn {
+  padding: 10px;
+  color: var(--text-white);
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-first-eye {
+  background-color: #141E30;
+  text-decoration: none;
+}
+
+.btn-second-github {
+  background-color: #DD8200;
+  text-decoration: none;
+
+}
+
+.contactame {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 10px;
+}
+
+input,textarea {
+  width: 100%;
+  padding: 12px 60px;
+  font-size: 16px;
+  border: 2px solid transparent; 
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  outline: none; 
+  margin-top: 6px;
+  background-color: rgb(92 131 131 / 16%);
+ 
+  color: #FCEDED;
+}
+
+
+input:focus,textarea:focus {
+  border-color: rgb(25, 45, 83); /* Cambiar color del borde en focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra alrededor del input */
+}
+
+.contactame-enviar{
+  padding: 12px 20px;
+  background: #141E30;
+  color: #FCEDED;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.contactame-enviar:hover{
+  opacity: 1;
+}
+.contactame-nombre,.contactame-correo {
+  grid-column: span 2;
+}
+
+.contactame-mensaje {
+  grid-column: span 4;
+}
+.contactame>button {
+  grid-column: span 1;
+}
+.text-nombre,.text-correo,.text-mensaje{
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #FCEDED;
+  font-weight: 600;
+}
+
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20{
+  margin-top: 20px;
+
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-1 {
+  gap: 4px;
+}
+
+.gap-2 {
+  gap: 6px;
+}
+.gap-3 {
+  gap: 8px;
+}
+
+.p-4 {
+  padding: 5px;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
