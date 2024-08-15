@@ -1,3 +1,4 @@
+import AngularIcon from "../components/icons/AngularIcon";
 import AstroIcon from "../components/icons/AstroIcon";
 import JqueryIcon from "../components/icons/JqueryIcon";
 import LaravelIcon from "../components/icons/LaravelIcon";
@@ -13,7 +14,8 @@ export const proyectos = [
     LaravelIcon,JqueryIcon,MysqlIcon
         ],
         url:'#',
-        repo:'#'
+        urlAvailable:false,
+        repo:'https://github.com/OtorresO/gestion-clientes'
         
     },
     {
@@ -22,7 +24,18 @@ export const proyectos = [
         technologiesIcons:[
             AstroIcon,ReactIcon,SupabaseIcon
         ],
-        url:'#',
-        repo:'#'
+        urlAvailable:true,
+        url:'https://vercel.com/orlandotos-projects/unsplash-collection',
+        repo:'https://github.com/OtorresO/unsplash-collection'
+    },
+    {
+        name:'Evaluations Teachers',
+        image:'img/proyectos/EVLUATIONTEACHERS.png',
+        technologiesIcons:[
+            AngularIcon
+        ],
+        urlAvailable:true,
+        url:'https://euphonious-nougat-82a974.netlify.app/login',
+        repo:'https://github.com/OtorresO/proyecto-final-angular'
     }
 ]
