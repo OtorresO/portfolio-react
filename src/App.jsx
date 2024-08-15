@@ -7,6 +7,7 @@ import InstagramIcon from './components/icons/InstagramIcon.jsx'
 import Proyecto from './components/proyecto/Proyecto.jsx'
 import { proyectos } from './data/proyectos.jsx'
 import { Toaster, toast } from 'sonner'
+import Linkedin from './components/icons/Linkedin.jsx'
 
 function App() {
   const [dataEmail, setDataEmail] = useState({
@@ -63,6 +64,7 @@ function App() {
           <a href='https://github.com/OtorresO' target='_blank'><GithubIcon size={30} color='#000000' /></a>
           <a href="https://web.facebook.com/forlant.alvarz" target='_blank'><FacebookIcon /></a>
           <a href='https://www.instagram.com/de_orlandot/' target='_blank'><InstagramIcon /></a>
+          <a href='linkedin.com/in/orlando-jose-junnior-torres-orozco-050b9331b' target='_blank'><Linkedin /></a>
         </div>
       </section>
     </header>
@@ -72,8 +74,8 @@ function App() {
         <img src="./img/criatura.png" alt="Imagen de Perfil" />
         <h4 className='my-10 title-section'>Acerca de </h4>
 
-        <p className=''>!Hola! Soy Orlando Torres Orozco, un desarrollador web full stack con 6 meses de experiencia en una
-          startup, donde trabajé en un sistema de gestión de clientes usando Laravel, MySQL, jQuery y Vue. Estoy
+        <p className=''>!Hola! Soy Orlando Torres Orozco, un desarrollador web  con 6 meses de experiencia en una
+          startup, donde implemente en un sistema de gestión de clientes usando Laravel, MySQL, jQuery y Vue. Estoy
           buscando nuevas oportunidades laborales para seguir creciendo y aprendiendo en el campo del desarrollo
           web.
 
