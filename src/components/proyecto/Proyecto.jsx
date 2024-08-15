@@ -8,10 +8,13 @@ export default function Proyecto({ proyecto }) {
         <div className="proyecto">
             <div className="proyecto-img" style={{ backgroundImage: `url(${proyecto.image})` }}>
                 <div className="overlay-proyecto-image ">
-                    <a className="btn btn-first-eye flex items-center justify-center  gap-1 " href={proyecto.url}>
+                    
+                    {
+                        proyecto.urlAvailable &&<a className="btn btn-first-eye flex items-center justify-center  gap-1 " href={proyecto.url}>
                         <EyeIcon /> Ver Demo
 
                     </a>
+                    }
                     <a className="btn btn-second-github flex items-center justify-center gap-1" href={proyecto.repo}>
                         <GithubIcon /> Ver código
 
