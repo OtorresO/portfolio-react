@@ -1,13 +1,13 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import FacebookIcon from './components/icons/FacebookIcon.jsx'
 import GithubIcon from './components/icons/GithubIcon.jsx'
 import InstagramIcon from './components/icons/InstagramIcon.jsx'
+import Linkedin from './components/icons/Linkedin.jsx'
 import Proyecto from './components/proyecto/Proyecto.jsx'
 import { proyectos } from './data/proyectos.jsx'
 import { Toaster, toast } from 'sonner'
-import Linkedin from './components/icons/Linkedin.jsx'
 
 function App() {
   const [dataEmail, setDataEmail] = useState({
@@ -16,7 +16,23 @@ function App() {
     mensaje: ''
   });
   const [sending, setSending] = useState(false)
-  
+  const [isScrolled, setIsScrolled] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 100) {  // Cambia 100 por el valor que desees
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup para evitar fugas de memoria
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   const enviarEmail = async (e) => {
     e.preventDefault();
     setSending(true)
@@ -46,88 +62,105 @@ function App() {
 
   }
   return <main>
-    <Toaster position="top-right" richColors/>
+    <Toaster position="top-right" richColors />
     <header>
-      <img src="./img/hero.jpg" alt="Código de javascript" className="hero-image " />
-      <div className="overlay-image">
 
-      </div>
-      <nav className="navbar ">
-        <a href="#acerca_de">Acerca de</a>
+      <nav className={`navbar  ${isScrolled?'bg-nav-scroll':'bg-transperent glowing-text'}`}>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#experiencia">Experiencia Laboral</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#contactame">Contacto</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-      <section className="myself">
-        <h4 >Orlando Torres</h4>
-        <p className='mt-10'>Desarrollador Web</p>
-        <div className='flex items-center justify-center gap-3 mt-10'>
+
+    </header>
+    <section className='sobre-mi mt-3 flex items-center gap-3 ' id='sobre-mi'>
+      <div className='sobre-mi-profile flex items-center flex-column gap-3'>
+        <img className='sobre-mi-avatar' src='./img/a-mi-myself.png' alt='Persona con chompa crema sonriendo' />
+        <div className='sobre-mi-redes-sociales flex items-center  gap-3 mt-10'>
           <a href='https://github.com/OtorresO' target='_blank'><GithubIcon size={30} color='#000000' /></a>
           <a href="https://web.facebook.com/forlant.alvarz" target='_blank'><FacebookIcon /></a>
           <a href='https://www.instagram.com/de_orlandot/' target='_blank'><InstagramIcon /></a>
           <a href='linkedin.com/in/orlando-jose-junnior-torres-orozco-050b9331b' target='_blank'><Linkedin /></a>
         </div>
-      </section>
-    </header>
+      </div>
 
-    <div className='container'>
-      <div className="acerca-de " id="acerca_de">
-        <img src="./img/criatura.png" alt="Imagen de Perfil" />
-        <h4 className='my-10 title-section'>Acerca de </h4>
-
-        <p className=''>!Hola! Soy Orlando Torres Orozco, un desarrollador web  con 6 meses de experiencia en una
-          startup, donde implemente en un sistema de gestión de clientes usando Laravel, MySQL, jQuery y Vue. Estoy
-          buscando nuevas oportunidades laborales para seguir creciendo y aprendiendo en el campo del desarrollo
+      <div className='sobre-mi-description '>
+        <h1 className='important fw-bold'>Hola ✋!, te saluda Orlando Torres</h1>
+        <p >
+          <span className=''>Desarrollador web </span> con 6 meses de experiencia laborando en una startup.</p>
+        <p>
+          Estoy buscando nuevas oportunidades laborales para seguir creciendo y aprendiendo en el campo del desarrollo
           web.
-
-
         </p>
       </div>
-      <div className="proyectos mt-10" id="proyectos">
-        <h4 className='title-section'>Proyectos</h4>
-        <div className="proyectos-grid mt-10">
-          {
-            proyectos.map(proyecto => <Proyecto key={crypto.randomUUID()} proyecto={proyecto} />)
-          }
 
+
+
+
+
+    </section>
+
+    <section className='experiencia'>
+      <h4 className='important mt-9 fw-bold'>💼 Experiencia Laboral</h4>
+      <div className='experiencia-container flex gap-5 mt-2' >
+        <div className='experiencia-info flex flex-column gap-3'>
+          <h5 className='fs-3 text-primary'>Desarrollador Web</h5>
+          <p className='fs-2 text-white fw-bold'>INSOTEC</p>
+          <span className='fs-2 text-white'>03/23-10/23</span>
         </div>
+        <div className='experiencia-description text-white ' >
+          Implementé un Sistema de Gestión Integral para dar seguimiento a los clientes, planes , servicios y pagos.
+        </div>
+      </div>
+    </section>
+
+    <section className="proyectos mt-9" id="proyectos">
+      <h4 className='important fw-bold'>👨‍💻 Proyectos</h4>
+      <div className="proyectos-grid mt-2">
+        {
+          proyectos.map(proyecto => <Proyecto key={crypto.randomUUID()} proyecto={proyecto} />)
+        }
 
       </div>
 
-      <div className='flex flex-column justify-center items-center mt-10' id='contactame'>
-        <h4 className='title-section my-10'>Contáctame</h4>
-        <form onSubmit={enviarEmail}>
-          <div className='contactame'>
-            <div className='contactame-nombre relative'>
-              <span className='text-nombre absolute'>Nombres:</span>
-              <input type="text" onChange={e => setDataEmail({ ...dataEmail, nombres: e.target.value })}  value={dataEmail.nombres}/>
+    </section>
 
-            </div>
-            <div className='contactame-correo relative'>
-              <span className='text-correo absolute'>Correo:</span>
-              <input type="text" onChange={e => setDataEmail({ ...dataEmail, correo: e.target.value })}  value={dataEmail.correo}/>
-
-            </div>
-            <div className='contactame-mensaje relative'>
-              <span className='text-mensaje absolute'>Mensaje:</span>
-              <textarea cols={30} rows={10} onChange={e => setDataEmail({ ...dataEmail, mensaje: e.target.value })} value={dataEmail.mensaje}></textarea>
-            </div>
-
-            <button className='contactame-enviar' disabled={sending}>{sending? 'Sending...':'Enviar'}</button>
+    <section className='contacto flex flex-column  mt-9' id='contacto'>
+      <h4 className='important  fw-bold'>🗣️📲 Contacto</h4>
+      <form onSubmit={enviarEmail} className='flex justify-center mt-2'>
+        <div className='contacto-grid'>
+          <div className='contacto-grid-nombre relative'>
+            <span className='text-nombre absolute'>Nombres:</span>
+            <input type="text" onChange={e => setDataEmail({ ...dataEmail, nombres: e.target.value })} value={dataEmail.nombres} />
 
           </div>
-        </form>
-        
+          <div className='contacto-grid-correo relative'>
+            <span className='text-correo absolute'>Correo:</span>
+            <input type="text" onChange={e => setDataEmail({ ...dataEmail, correo: e.target.value })} value={dataEmail.correo} />
 
-      </div>
+          </div>
+          <div className='contacto-grid-mensaje relative'>
+            <span className='text-mensaje absolute'>Mensaje:</span>
+            <textarea cols={30} rows={10} onChange={e => setDataEmail({ ...dataEmail, mensaje: e.target.value })} value={dataEmail.mensaje}></textarea>
+          </div>
+
+          <button className='contacto-grid-enviar' disabled={sending}>{sending ? 'Sending...' : 'Enviar'}</button>
+
+        </div>
+      </form>
 
 
+    </section>
 
-    </div>
-    <footer className='mt-20'>
+    <footer className='mt-9 '>
 
-      <p>&copy; 2024 Orlando Torres. Ningun derecho reservado, usalo a libertad si te sirve 👍️.</p>
+      <p className='text-center '>&copy; 2024 Orlando Torres. Ningun derecho reservado, usalo a libertad si te sirve 👍️.</p>
     </footer>
+
+
+
   </main>
+
 }
 
 export default App

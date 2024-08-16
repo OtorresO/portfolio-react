@@ -2,15 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 
 }
 
 body {
   background: #141E30;
-  background: -webkit-linear-gradient(to right, #243B55, #141E30);
-  background: linear-gradient(to right, #243B55, #141E30);
+  background: -webkit-linear-gradient(to right, #132f50, #040913);
+  background: linear-gradient(to right, #132f50, #040913);
 
 }
 
@@ -20,9 +20,9 @@ body {
 
 
 main {
-
-  height: 100vh;
-  width: 100%;
+  width: 760px;
+  margin:0 auto;
+  padding: 0 20px;
 
 }
 
@@ -30,113 +30,135 @@ main {
   margin: 0 300px;
 }
 
-header {
+
+
+header{
   position: relative;
-}
-
-.hero-image {
   width: 100%;
-  height: 500px;
-
-
+  height: 70px;
 }
 
-.overlay-image {
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(45deg, rgba(25, 87, 17, 0.4) 0%, rgba(22, 130, 231, 0.4) 100%);
-  top: 0;
-  left: 0;
-
-}
 
 .navbar {
-  position: absolute;
-  top: 5%;
-  right: 200px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,0);
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  z-index: 99999;
+  
 }
 
 .navbar a {
   text-decoration: none;
-  color: var(--text-white);
-  font-size: 16px;
+  color: #FCEDED;
+  font-size: 14px;
   font-weight: 500;
-  opacity: 0.6;
-  font-weight: 500;
+  opacity: 0.9;
 
 }
 
 .navbar a:hover{
-  opacity: 1;
+  color: #DD8200;
+}
+.sobre-mi{
+ 
+}
+.sobre-mi-avatar{
+  border-radius:50%;
+  width: 150px;
+  height: 150px;
+  border-bottom: 5px solid #040913;
+  border-bottom-color: #DD8200;
+}
+.sobre-mi-title{
+  color: #DD8200;
+  font-weight: 500;
+  font-size: 30px;
+}
+.sobre-mi-description{
+  color: #f7eded;
+  line-height: 30px;
+
+}
+.sobre-mi-redes-sociales  a{
+  transition: transform 0.3s ease;
+}
+.sobre-mi-redes-sociales  a:hover{
+  transform: scale(1.2);
 }
 
+.emphasis{
+  font-weight: bold;
+}
+.important{
+  font-weight: 400;
+  color: #DD8200;
+  font-size: 28px;
+}
+.title-section {
+  color: #DD8200;
+  font-weight: 300;
+  font-size: 30px;
+ 
+
+}
+.text-white{
+  color: #FCEDED;
+
+}
+.text-primary{
+  color:#DD8200;
+}
+
+
+.bg-nav-scroll{
+  background-color: #3f485bb5;
+}
+.bg-transperent{
+  background-color: transparent;
+}
+.fs-3{
+  font-size: 20px;
+}
+.fs-4{
+  font-size: 24px;
+}
+.fs-1{
+  font-size: 12px;
+}
+.fs-2{
+  font-size: 16px;
+}
+.fw-bold{
+  font-weight: bold;
+}
 footer{
   width: 100%;
   height: 60px;
-  background-color: #0d172a;
   color: #FCEDED;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.myself {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 200;
-  color: var(--text-white);
-  text-align: center;
-}
-.myself div a{
-  transition: transform 0.3s ease;
-}
-.myself div a:hover{
-  transform: scale(1.2);
-}
-.myself h4 {
-  font-size: 40px;
-  font-weight: 400;
 
-}
 
-.myself p {
-  font-size: 20px;
-  font-weight: 200;
+.experiencia-info,.sobre-mi-profile{
+  width: 30%;
 }
-
-.acerca-de {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: -50px;
-
-}
-.acerca-de img {
-  width: 100px;
-  height: 100px;
-  border: 1px solid var(--text-white);
-  border-radius: 50%;
-  z-index: 100;
-
-}
-.acerca-de p {
-  color: #f7eded;
-  line-height: 25px;
-  font-weight: 200;
-  font-size: 18px;
+.experiencia-description,.sobre-mi-description{
+  width: 70%;
 }
 
 .proyectos {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 
 }
@@ -147,11 +169,7 @@ footer{
   width: 100%;
 
 }
-.title-section {
-  color: #DD8200;
-  font-weight: 200;
-  font-size: 30px;
-}
+
 
 .btn {
   padding: 10px;
@@ -177,7 +195,7 @@ footer{
 
 }
 
-.contactame {
+.contacto-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
@@ -204,7 +222,7 @@ input:focus,textarea:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra alrededor del input */
 }
 
-.contactame-enviar{
+.contacto-grid-enviar{
   padding: 12px 20px;
   background: #141E30;
   color: #FCEDED;
@@ -215,17 +233,17 @@ input:focus,textarea:focus {
   font-weight: 600;
   opacity: 0.8;
 }
-.contactame-enviar:hover{
+.contacto-grid-enviar:hover{
   opacity: 1;
 }
-.contactame-nombre,.contactame-correo {
+.contacto-grid-nombre,.contacto-grid-correo {
   grid-column: span 2;
 }
 
-.contactame-mensaje {
+.contacto-grid-mensaje {
   grid-column: span 4;
 }
-.contactame>button {
+.contacto-grid>button {
   grid-column: span 1;
 }
 .text-nombre,.text-correo,.text-mensaje{
@@ -246,15 +264,21 @@ input:focus,textarea:focus {
   margin-bottom: 10px;
 }
 
-.mt-10 {
+.mt-1{
   margin-top: 10px;
 }
 
-.mt-20{
+.mt-2{
   margin-top: 20px;
 
 }
 
+.mt-3{
+  margin-top: 30px;
+}
+.mt-9{
+  margin-top: 90px;
+}
 
 .flex {
   display: flex;
@@ -271,7 +295,15 @@ input:focus,textarea:focus {
 .justify-center {
   justify-content: center;
 }
-
+.text-center{
+  text-align: center;
+}
+.w-full{
+  width: 100%;
+}
+.line-height{
+  line-height: 30px;
+}
 .gap-1 {
   gap: 4px;
 }
@@ -281,6 +313,13 @@ input:focus,textarea:focus {
 }
 .gap-3 {
   gap: 8px;
+}
+
+.gap-4 {
+  gap: 10px;
+}
+.gap-5 {
+  gap: 12px;
 }
 
 .p-4 {
@@ -293,4 +332,50 @@ input:focus,textarea:focus {
 
 .relative{
   position: relative;
+}
+
+@media (max-width: 640px) {
+ 
+  .contacto-grid-nombre,.contacto-grid-correo {
+    grid-column: span 4;
+  }
+  
+  .contacto-grid-mensaje {
+    grid-column: span 4;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 760px){
+  main{
+    width: 100%;
+  }
+  .sobre-mi{
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .experiencia-info,.sobre-mi-profile{
+    width: 100%;
+  }
+  .experiencia-description,.sobre-mi-description{
+    width: 100%;
+  }
+  .experiencia-container{
+    flex-direction: column;
+  }
+  .sobre-mi-description{
+    text-align: center;
+  }
+}
+
+
+
+
+.glowing-text {
+ 
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #040913, 0 0 40px #040913;
 }

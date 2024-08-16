@@ -25,7 +25,7 @@ export const proyectos = [
             AstroIcon,ReactIcon,SupabaseIcon
         ],
         urlAvailable:true,
-        url:'https://vercel.com/orlandotos-projects/unsplash-collection',
+        url:'https://unsplash-collection-e1emgt884-orlandotos-projects.vercel.app/',
         repo:'https://github.com/OtorresO/unsplash-collection'
     },
     {
