@@ -10,12 +10,12 @@ export default function Proyecto({ proyecto }) {
                 <div className="overlay-proyecto-image ">
                     
                     {
-                        proyecto.urlAvailable &&<a className="btn btn-first-eye flex items-center justify-center  gap-1 " href={proyecto.url}>
+                        proyecto.urlAvailable &&<a className="btn btn-first-eye flex items-center justify-center  gap-1 " href={proyecto.url} target='_blank'>
                         <EyeIcon /> Ver Demo
 
                     </a>
                     }
-                    <a className="btn btn-second-github flex items-center justify-center gap-1" href={proyecto.repo}>
+                    <a className="btn btn-second-github flex items-center justify-center gap-1" href={proyecto.repo}  target='_blank'>
                         <GithubIcon /> Ver código
 
                     </a>

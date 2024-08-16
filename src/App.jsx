@@ -65,7 +65,7 @@ function App() {
     <Toaster position="top-right" richColors />
     <header>
 
-      <nav className={`navbar  ${isScrolled?'bg-nav-scroll':'bg-transperent glowing-text'}`}>
+      <nav className={`navbar  ${isScrolled ? 'bg-nav-scroll' : 'bg-transperent glowing-text'}`}>
         <a href="#sobre-mi">Sobre Mí</a>
         <a href="#experiencia">Experiencia Laboral</a>
         <a href="#proyectos">Proyectos</a>
@@ -101,16 +101,26 @@ function App() {
     </section>
 
     <section className='experiencia'>
+
       <h4 className='important mt-9 fw-bold'>💼 Experiencia Laboral</h4>
-      <div className='experiencia-container flex gap-5 mt-2' >
-        <div className='experiencia-info flex flex-column gap-3'>
-          <h5 className='fs-3 text-primary'>Desarrollador Web</h5>
-          <p className='fs-2 text-white fw-bold'>INSOTEC</p>
-          <span className='fs-2 text-white'>03/23-10/23</span>
+      <div className=' flex gap-5 mt-2' >
+        <div class="cane">
+          <div class="ball">
+
+          </div>
         </div>
-        <div className='experiencia-description text-white ' >
-          Implementé un Sistema de Gestión Integral para dar seguimiento a los clientes, planes , servicios y pagos.
+
+        <div className='flex experiencia-container'>
+          <div className='experiencia-info flex flex-column gap-3'>
+            <h5 className='fs-3 text-primary'>Desarrollador Web</h5>
+            <p className='fs-2 text-white fw-bold'>INSOTEC</p>
+            <span className='fs-2 text-white'>03/23-10/23</span>
+          </div>
+          <div className='experiencia-description text-white ' >
+            Implementé un Sistema de Gestión Integral para dar seguimiento a los clientes, planes , servicios y pagos.
+          </div>
         </div>
+
       </div>
     </section>
 
